@@ -1,0 +1,303 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Roboto, -apple-system, BlinkMacSystemFont, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #f8f9fa;
+}
+
+/* 链接样式与图标样式 */
+.nav-link.active {
+  font-weight: bold;
+  color: rgb(71, 127, 190) !important;
+}
+
+.nav-head{
+  margin-top: 30px;;
+}
+
+.nav-link {
+  color: #333;
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  color: #0056b3;
+}
+
+.nav-icon {
+  margin-right: 0.75rem;
+  font-size: 1.25rem;
+  color: #888;
+}
+
+.nav-icon-s {
+  margin-right: 0.75rem;
+  font-size: 1rem;
+  color: #888;
+}
+
+.flag-icon {
+  width: 1.2rem;
+  height: auto;
+}
+
+.nav-link-content {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.nav-profile-slogan {
+  font-size: 0.75rem; 
+  color: #334151;
+  margin-left: 1.5rem;
+  margin-bottom: 0.5rem; 
+  text-align: left; 
+  line-height: 1.4; 
+}
+
+.nav-profile-location {
+  display: flex;
+  align-items: center; 
+  font-size: 0.7rem; 
+  color: #3d5c7d; 
+  margin-bottom: 0.65rem; 
+}
+
+.nav-profile-location-icon {
+  margin-left: 20px; 
+  margin-right: 4px; 
+  font-size: 0.65rem; 
+}
+
+
+/* 导航菜单 */
+.sidebar {
+  height:100vh;
+}
+
+.sidebar-nav .nav-link {
+  display: flex;
+  align-items: center;
+  padding: 0.25rem 1.35rem;
+  margin: 0.16rem 0;
+  border-radius: 0.35rem;
+  transition: all 0.05s ease-in-out;
+  color: #666;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.sidebar-nav .nav-link.active {
+  background-color: #e9ecef;
+  color: #007bff;
+  font-weight: 600;
+}
+
+/* Language Switcher */
+.language-switcher-container {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.language-btn {
+  padding: 0.15rem 0.4rem;
+  border: 1px solid #edeeef;
+  background: rgb(227, 224, 224);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.05s ease;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+}
+
+.language-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.language-btn.active {
+  border-color: #d6acb3;
+  background-color: #ccdff2;
+}
+
+/* Blog 导航的 icon */
+.dropdown-icon {
+  margin-left: auto;
+  font-size: 2.2rem;
+  transition: transform 0.05s ease;
+  color: #888;
+}
+
+/* Blog 导航的下拉列表 */
+.dropdown-icon.open {
+  transform: rotate(180deg);
+}
+
+.dropdown-item {
+  display: block;
+  padding: 0.75rem 0;
+  margin-bottom: 0.75rem;
+  text-decoration: none;
+  font-size: 0.98rem;
+  border-radius: 0.375rem;
+  transition: all 0.05s ease;
+  position: relative;
+}
+
+.dropdown-item span {
+  display: inline-block;
+  margin-left: 2rem;
+  color:#666
+}
+
+.dropdown-item.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 80%;
+  background-color: #879ac1;
+  margin-left: 0.75rem;
+}
+
+.dropdown-item:hover {
+  padding-left: 0.65rem;
+}
+
+.dropdown-item:hover span::after {
+  content: '';
+  position: absolute;
+}
+
+.nav-dropdown-menu {
+  margin-left: 0.55rem;
+  padding: 0.55rem 1rem;
+}
+
+.nav-link-content {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+/* 内容面板 */
+.content-panel {
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* 阴影效果 */
+  border-radius: 8px; /* 圆角效果 */
+  padding: 20px;
+  margin-top: 30px; /* 顶部额外的间距 */
+}
+
+/* 博客内容 */
+.blog-content {
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* 布局相关样式 */
+.layout {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  padding-top: 60px; /* 为语言切换器留出空间 */
+  background-color: #f8f9fa;
+}
+
+.sidebar {
+  flex: 0 0 220px; /* 固定宽度 */
+  background-color: #f8f9fa;
+  padding: 1rem;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.main-content {
+  flex: 1;
+  padding: 1.25rem;
+  overflow-y: auto;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 8px 0 0 8px; /* 只保留左侧圆角 */
+  margin: 0; /* 移除左右边距 */
+  margin-left: 1rem; /* 只保留左侧边距 */
+}
+
+/* 邮箱复制提示 */
+.email-toast {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.433);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.65rem;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 1100;
+  animation: fadeInOut 2s ease;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(-5px); }
+  20% { opacity: 1; transform: translateY(0); }
+  80% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-5px); }
+}
+
+.friend-card {
+  width: 900px;
+  padding: 25px;
+}
+
+/* Projects Cards */
+.project-card {
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.project-modal .modal-content {
+  border-radius: 15px;
+  overflow: hidden;
+}
+.project-card {
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+}
+
+.project-card img {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.project-modal img {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+.project-detail h2 {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.project-detail h5 {
+  color: #2c3e50;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--secondary-color);
+}
