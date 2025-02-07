@@ -31,10 +31,11 @@
   "version": "1.0.0",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "next dev",
+    "dev": "concurrently \"next dev\" \"cd backend && node index.js\"",
     "build": "next build",
+    "start": "next start",
     "export": "next build && next export",
-    "start": "concurrently \"npm run dev\" \"cd backend && node index.js\""
+    "serve": "concurrently \"next start\" \"cd backend && node index.js\""
   },
   "keywords": [],
   "author": "luna",
