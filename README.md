@@ -31,4 +31,4 @@ Feel free to explore my projects or reach out through my website. Let's build so
 
 <br>
 
-![Profile Views](https://komarev.com/ghpvc/?username=luna25y&color=#lavender)
+![Profile Views](https://komarev.com/ghpvc/?username=luna25y&color=lavender)
