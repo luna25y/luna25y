@@ -1,8 +1,8 @@
 # Hi, I'm Luna
 
-I'm a software engineering. <br>
-I enjoy exploring Web3, smart contracts, and the potential of AI technologies. <br>
-My passion lies in creating practical solutions, from backend systems to innovative user interfaces.<br>
+I'm a software engineer.<br>
+I enjoy exploring Web3, smart contracts, and the potential of AI technologies.<br>
+My passion lies in creating practical solutions, from backend systems to innovative user interfaces.
 
 <br>
 
