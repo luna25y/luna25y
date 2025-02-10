@@ -5,7 +5,6 @@ I enjoy exploring Web3, smart contracts, and the potential of AI technologies.<b
 My passion lies in creating practical solutions, from backend systems to innovative user interfaces.<br>
 my website: [Luna25y.com](https://luna25y.com)
 
-<br>
 
 ### My Skills
 - **Languages**: Java, Python, SQL, JavaScript, TypeScript, HTML/CSS, C#, Solidity, Swift(Beginner)
@@ -13,7 +12,6 @@ my website: [Luna25y.com](https://luna25y.com)
 - **Databases**: MySQL, Oracle, MongoDB(Beginner), Redis(Beginner)
 - **Platforms & Tools**: OutSystems, Postman, Unity(Beginner)
 
-<br>
 
 ### ✨
 - ENTJ 
