@@ -1,12 +1,5 @@
-.vercel
-
-# 忽略 JDK 文件
-Oracle_JDK-23.jdk/
-
-# 忽略 node_modules 文件夹
 node_modules/
 
-# 忽略 Next.js 的 `.next` 缓存文件夹
 .next/
 
 backend/.env
