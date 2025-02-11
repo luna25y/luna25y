@@ -7,10 +7,10 @@ my website: [luna25y.com](https://luna25y.com)
 
 
 ### 🎼 My Skills
-- **Languages**: Java, Python, SQL, JavaScript, TypeScript, HTML/CSS, C#, Solidity, Swift(Beginner)
-- **Frameworks**: React, Node.js, Express.js, Django, Spring Boot
-- **Databases**: MySQL, Oracle, MongoDB(Beginner), Redis(Beginner)
-- **Platforms & Tools**: OutSystems, Postman, Unity(Beginner)
+- **Languages**: `Java`  `Python`  `SQL` `JavaScript`  `TypeScript`  `HTML/CSS`  `C#`  `Solidity`  `Swift(Beginner)`
+- **Frameworks**: `React`  `Node.js`  `Express.js`  `Django`  `Spring Boot`
+- **Databases**: `MySQL`  `Oracle`  `AWS DynamoDB(Beginner)`  `Redis(Beginner)`
+- **Platforms & Tools**: `OutSystems`  `Postman`  `Unity(Beginner)`
 
 
 ### ✨ Fun Facts
