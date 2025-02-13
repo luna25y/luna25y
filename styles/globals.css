@@ -100,7 +100,7 @@ body {
   position: fixed;
   top: 1rem;
   right: 1rem;
-  z-index: 1000;
+  z-index: 997;
   display: flex;
   gap: 0.5rem;
 }
@@ -208,7 +208,7 @@ body {
 /* 布局相关样式 */
 .layout {
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
   overflow: hidden;
   padding-top: 60px; /* 为语言切换器留出空间 */
   background-color: #f8f9fa;
@@ -300,4 +300,172 @@ body {
   color: #2c3e50;
   padding-bottom: 0.5rem;
   border-bottom: 2px solid var(--secondary-color);
+}
+
+/* 移动端样式 */
+.mobile-float-button {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1000;
+}
+
+.mobile-menu-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  padding: 0.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.mobile-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.mobile-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.mobile-menu-icon {
+  font-size: 1.2rem;
+}
+
+/* 响应式布局 */
+@media (max-width: 768px) {
+  /* 确保所有容器背景色一致 */
+  body, 
+  .layout,
+  .sidebar,
+  .main-content,
+  .container,
+  .content-panel {
+    background-color: #fff !important;
+  }
+
+  .layout {
+    display: block;
+    padding-top: 60px;
+  }
+
+  .mobile-float-button {
+    margin-top: 30px;
+    display: block;
+    transition: opacity 0.3s ease;
+  }
+  .avatar {
+    margin-top: 100px;
+  }
+
+  /* 当 sidebar 打开时隐藏浮动按钮 */
+  .sidebar-wrapper .mobile-open ~ .mobile-float-button {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .sidebar-container {
+    position: fixed;
+    left: -280px;
+    top: 0;
+    bottom: 0;
+    width: 280px;
+    background: white;
+    transition: left 0.3s ease;
+    z-index: 999;
+    padding: 1rem;
+    overflow-y: auto;
+  }
+
+  .sidebar-container.mobile-open {
+    left: 0;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  /* 调整主内容区域 */
+  .main-content {
+    margin: 0 !important;
+    width: 100% !important;
+    padding: 1rem !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  /* 调整语言切换器位置 */
+  .language-switcher-container {
+    top: 1rem;
+    right: 1rem;
+  }
+
+  /* 调整内容容器 */
+  .container {
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* 调整卡片样式 */
+  .profileCard, .card, .content-panel {
+    border-radius: 8px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+    margin-bottom: 1rem !important;
+  }
+
+  /* 调整时间轴卡片 */
+  .timeline {
+    margin: 0 !important;
+    padding: 0 10px !important;
+  }
+
+  .card {
+    width: 100% !important;
+    margin: 0 0 1rem 0 !important;
+  }
+}
+
+/* 遮罩层样式 */
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+}
+
+.sidebar-overlay.show {
+  display: block;
+}
+
+/* 确保滚动条在移动端正常工作 */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  html, body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar-overlay {
+    display: block;
+  }
+}
+
+/* 侧边栏样式 */
+.sidebar-container {
+  z-index: 999;
 }
