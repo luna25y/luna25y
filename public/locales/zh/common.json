@@ -23,6 +23,10 @@
       "send": "Send Message"
     },
     "downloadResume": "Download Resume",
+    "skills": {
+      "showMore": "查看全部",
+      "showLess": "折叠"
+    },
     "timeline": {
       "heading": "Experience & Skills",
       "entries": [

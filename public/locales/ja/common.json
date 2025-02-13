@@ -23,6 +23,10 @@
         "send": "Send Message"
       },
       "downloadResume": "Download Resume",
+      "skills": {
+        "showMore": "すべてのスキルを見る",
+        "showLess": "折りたたむ"
+      },
       "timeline": {
         "heading": "経験とスキル",
         "entries": [

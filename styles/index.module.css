@@ -329,3 +329,26 @@ form .submitButton {
         width: 100%;
     }
 }
+
+.expandSkillsButton {
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    font-size: 0.9em;
+    padding: 2px 8px;
+    margin-left: 4px;
+    border-radius: 12px;
+    background-color: #f0f0f0;
+}
+
+.expandSkillsButton:hover {
+    background-color: #e0e0e0;
+}
+
+/* 在桌面端隐藏展开按钮 */
+@media (min-width: 768px) {
+    .expandSkillsButton {
+        display: none;
+    }
+}

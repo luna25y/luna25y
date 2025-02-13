@@ -44,6 +44,12 @@ const About: React.FC = () => {
   const [showContactForm, setShowContactForm] = useState(false);
   const [message, setMessage] = useState('');
   const [email, setEmail] = useState('');
+  const [expandedSkills, setExpandedSkills] = useState<{ 
+    [key: string]: boolean  // 改用字符串键以支持子条目
+  }>({});
+
+  // 添加默认显示标签数量的常量
+  const DEFAULT_VISIBLE_TAGS = 4;
 
   const changeLanguage = (lng: string) => {
     const { pathname, asPath, query } = router;
@@ -80,6 +86,15 @@ const About: React.FC = () => {
       console.error('Error - sending message:', error);
       alert('There was a problem, please try again later');
     }
+  };
+
+  // 修改切换函数以支持子条目
+  const toggleSkills = (mainIndex: number, subIndex?: number) => {
+    const key = subIndex !== undefined ? `${mainIndex}-${subIndex}` : `${mainIndex}`;
+    setExpandedSkills(prev => ({
+      ...prev,
+      [key]: !prev[key]
+    }));
   };
 
   // 从语言包中读取时间轴数据
@@ -240,13 +255,26 @@ const About: React.FC = () => {
                       ))}
                     </div>
                   )}
+                  {/* 主条目的技能标签 */}
                   {entry.skills && entry.skills.length > 0 && (
                     <div className={styles.skillsContainer}>
-                      {entry.skills.map((skill, idx) => (
-                        <span key={idx} className={styles.skillTag}>
-                          {skill}
-                        </span>
+                      {entry.skills
+                        .slice(0, expandedSkills[`${index}`] ? undefined : DEFAULT_VISIBLE_TAGS)
+                        .map((skill, idx) => (
+                          <span key={idx} className={styles.skillTag}>
+                            {skill}
+                          </span>
                       ))}
+                      {entry.skills.length > DEFAULT_VISIBLE_TAGS && (
+                        <button 
+                          className={styles.expandSkillsButton}
+                          onClick={() => toggleSkills(index)}
+                        >
+                          {expandedSkills[`${index}`] ? 
+                            t('about.skills.showLess') : 
+                            t('about.skills.showMore', { count: entry.skills.length - DEFAULT_VISIBLE_TAGS })}
+                        </button>
+                      )}
                     </div>
                   )}
                   {entry.subEntries && entry.subEntries.length > 0 && (
@@ -273,13 +301,26 @@ const About: React.FC = () => {
                               ))}
                             </div>
                           )}
+                          {/* 子条目的技能标签 */}
                           {subEntry.skills && subEntry.skills.length > 0 && (
                             <div className={styles.skillsContainer}>
-                              {subEntry.skills.map((skill, sidx) => (
-                                <span key={sidx} className={styles.skillTag}>
-                                  {skill}
-                                </span>
-                              ))}
+                              {subEntry.skills
+                                .slice(0, expandedSkills[`${index}-${subIndex}`] ? undefined : DEFAULT_VISIBLE_TAGS)
+                                .map((skill, sidx) => (
+                                  <span key={sidx} className={styles.skillTag}>
+                                    {skill}
+                                  </span>
+                                ))}
+                              {subEntry.skills.length > DEFAULT_VISIBLE_TAGS && (
+                                <button 
+                                  className={styles.expandSkillsButton}
+                                  onClick={() => toggleSkills(index, subIndex)}
+                                >
+                                  {expandedSkills[`${index}-${subIndex}`] ? 
+                                    t('about.skills.showLess') : 
+                                    t('about.skills.showMore', { count: subEntry.skills.length - DEFAULT_VISIBLE_TAGS })}
+                                </button>
+                              )}
                             </div>
                           )}
                         </div>

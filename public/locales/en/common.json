@@ -24,6 +24,10 @@
       "send": "Send Message"
     },
     "downloadResume": "Download Resume",
+    "skills": {
+      "showMore": "click to see all skills",
+      "showLess": "fold"
+    },
     "timeline": {
       "heading": "Experience & Skills",
       "entries": [
