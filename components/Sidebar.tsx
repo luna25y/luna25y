@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 
-import { GB, JP, CN } from 'country-flag-icons/react/3x2'; 
 import { RiMoonClearLine, RiHomeHeartLine, RiArrowDropDownLine } from 'react-icons/ri';
 import { ImBlog } from 'react-icons/im';
 import { LiaUserFriendsSolid } from 'react-icons/lia';
@@ -106,37 +105,6 @@ const Sidebar: React.FC = () => {
             <LuMailPlus className="nav-icon-s" style={{ color: "#226089"}} />
           </button>
         </div>
-      </div>
-
-      {/* Language Switcher */}
-      <div className="language-switcher-container">
-        <button
-          className={`language-btn ${
-            router.locale === 'en' ? 'active' : ''
-          }`}
-          onClick={() => changeLanguage('en')}
-        >
-          <GB className="flag-icon" />
-          <span>{t('language.english')}</span>
-        </button>
-        <button
-          className={`language-btn ${
-            router.locale === 'zh' ? 'active' : ''
-          }`}
-          onClick={() => changeLanguage('zh')}
-        >
-          <CN className="flag-icon" />
-          <span>{t('language.chinese')}</span>
-        </button>
-        <button
-          className={`language-btn ${
-            router.locale === 'ja' ? 'active' : ''
-          }`}
-          onClick={() => changeLanguage('ja')}
-        >
-          <JP className="flag-icon" />
-          <span>{t('language.japanese')}</span>
-        </button>
       </div>
 
       {/* 导航菜单 */}

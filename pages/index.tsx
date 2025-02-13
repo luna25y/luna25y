@@ -5,6 +5,8 @@ import type { GetStaticProps } from 'next';
 import styles from '../styles/index.module.css';
 import { CiLocationOn } from 'react-icons/ci';
 import { FiDownload } from 'react-icons/fi';
+import { GB, JP, CN } from 'country-flag-icons/react/3x2';
+import { useRouter } from 'next/router';
 
 // 定义时间轴条目的接口
 interface TimelineEntry {
@@ -37,10 +39,16 @@ const extractEndYearMonth = (period: string): string => {
 };
 
 const About: React.FC = () => {
+  const router = useRouter();
   const { t } = useTranslation('common');
   const [showContactForm, setShowContactForm] = useState(false);
   const [message, setMessage] = useState('');
   const [email, setEmail] = useState('');
+
+  const changeLanguage = (lng: string) => {
+    const { pathname, asPath, query } = router;
+    router.push({ pathname, query }, asPath, { locale: lng });
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -147,6 +155,31 @@ const About: React.FC = () => {
           </div>
         </div>
       )}
+
+      {/* 语言切换器 */}
+      <div className="language-switcher-container">
+        <button
+          className={`language-btn ${router.locale === 'en' ? 'active' : ''}`}
+          onClick={() => changeLanguage('en')}
+        >
+          <GB className="flag-icon" />
+          <span>{t('language.english')}</span>
+        </button>
+        <button
+          className={`language-btn ${router.locale === 'zh' ? 'active' : ''}`}
+          onClick={() => changeLanguage('zh')}
+        >
+          <CN className="flag-icon" />
+          <span>{t('language.chinese')}</span>
+        </button>
+        <button
+          className={`language-btn ${router.locale === 'ja' ? 'active' : ''}`}
+          onClick={() => changeLanguage('ja')}
+        >
+          <JP className="flag-icon" />
+          <span>{t('language.japanese')}</span>
+        </button>
+      </div>
 
       {/* 下方时间轴（保持不变） */}
       <div className={styles.timeline}>
