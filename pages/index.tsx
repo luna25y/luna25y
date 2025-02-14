@@ -129,7 +129,7 @@ const About: React.FC = () => {
           {t('about.sendMessage')}
       </button>
       */}
-  </div>
+          </div>
 
           </div>
         </div>

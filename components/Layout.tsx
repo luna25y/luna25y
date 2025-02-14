@@ -16,7 +16,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       </aside>
       {/* 右侧内容区域 */}
       <main className="main-content-scroll">
-        <div className="main-content">
+        <div className="main-content md:pl-64 sm:pl-0">
           {children}
         </div>
       </main>

@@ -1,6 +1,6 @@
 // Sidebar
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
@@ -19,7 +19,20 @@ const Sidebar: React.FC = () => {
   const [isBlogDropdownOpen, setIsBlogDropdownOpen] = useState(false);
   const [showEmailToast, setShowEmailToast] = useState(false);
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileOpen, setIsMobileOpen] = useState(false);
+
+  // 添加路由变化监听
+  useEffect(() => {
+    const handleRouteChange = () => {
+      setIsMobileOpen(false);
+    };
+
+    router.events.on('routeChangeStart', handleRouteChange);
+
+    return () => {
+      router.events.off('routeChangeStart', handleRouteChange);
+    };
+  }, [router]);
 
   const changeLanguage = (lng: string) => {
     const { pathname, asPath, query } = router;
@@ -38,18 +51,16 @@ const Sidebar: React.FC = () => {
   };
 
   const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
+    setIsMobileOpen(!isMobileOpen);
   };
 
-  // 添加关闭菜单的处理函数
   const closeMobileMenu = () => {
-    setIsMobileMenuOpen(false);
+    setIsMobileOpen(false);
   };
 
   return (
     <div className="sidebar-wrapper">
-      {/* 修改 sidebar-container 的类名 */}
-      <div className={`sidebar-container ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
+      <div className={`sidebar-container ${isMobileOpen ? 'mobile-open' : ''}`}>
         {showEmailToast && (
           <div 
             className="email-toast" 
@@ -201,10 +212,11 @@ const Sidebar: React.FC = () => {
         </nav>
       </div>
 
-      {/* 添加遮罩层 */}
-      {isMobileMenuOpen && (
-        <div className="sidebar-overlay" onClick={closeMobileMenu} />
-      )}
+      {/* 遮罩层 */}
+      <div 
+        className={`sidebar-overlay ${isMobileOpen ? 'show' : ''}`}
+        onClick={closeMobileMenu}
+      />
 
       {/* 移动端悬浮按钮 */}
       <div className="mobile-float-button">
@@ -215,7 +227,7 @@ const Sidebar: React.FC = () => {
             className="mobile-avatar"
           />
           <span className="mobile-name">{t('name')}</span>
-          {isMobileMenuOpen ? (
+          {isMobileOpen ? (
             <IoMdClose className="mobile-menu-icon" />
           ) : (
             <RiMenu2Fill className="mobile-menu-icon" />

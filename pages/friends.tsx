@@ -4,15 +4,49 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { GetStaticProps } from 'next';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import Head from 'next/head';
+import { GB, JP, CN } from 'country-flag-icons/react/3x2';
+import { useRouter } from 'next/router';
 
 const Friends: React.FC = () => {
   const { t } = useTranslation('common');
+  const router = useRouter();
 
   const handleCardClick_lanceMoe = () => {
     window.open("https://www.lance.moe/", "_blank", "noopener,noreferrer");
   };
 
+  const changeLanguage = (lng: string) => {
+    const { pathname, asPath, query } = router;
+    router.push({ pathname, query }, asPath, { locale: lng });
+  };
+
   return (
+    <>
+      {/* 语言切换器 */}
+      <div className="language-switcher-container">
+        <button
+          className={`language-btn ${router.locale === 'en' ? 'active' : ''}`}
+          onClick={() => changeLanguage('en')}
+        >
+          <GB className="flag-icon" />
+          <span>{t('language.english')}</span>
+        </button>
+        <button
+          className={`language-btn ${router.locale === 'zh' ? 'active' : ''}`}
+          onClick={() => changeLanguage('zh')}
+        >
+          <CN className="flag-icon" />
+          <span>{t('language.chinese')}</span>
+        </button>
+        <button
+          className={`language-btn ${router.locale === 'ja' ? 'active' : ''}`}
+          onClick={() => changeLanguage('ja')}
+        >
+          <JP className="flag-icon" />
+          <span>{t('language.japanese')}</span>
+        </button>
+      </div>
+
       <Container className="my-4 d-flex justify-content-center">
         <Row className="mb-4">
           <Col>
@@ -49,6 +83,7 @@ const Friends: React.FC = () => {
           </Col>
         </Row>
       </Container>
+    </>
   );
 };
 

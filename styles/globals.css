@@ -75,7 +75,7 @@ body {
 
 /* 导航菜单 */
 .sidebar {
-  height:100vh;
+  height: 100vh;
   flex: 0 0 220px; /* 固定宽度 */
   background-color: #f8f9fa;
   padding: 1rem;
@@ -132,6 +132,12 @@ body {
 .language-btn.active {
   border-color: #d6acb3;
   background-color: #ccdff2;
+}
+
+/* 调整语言切换器位置 */
+.language-switcher-container {
+  top: 1rem;
+  right: 1rem;
 }
 
 /* Blog 导航的 icon */
@@ -202,7 +208,7 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* 阴影效果 */
   border-radius: 8px; /* 圆角效果 */
   padding: 20px;
-  margin-top: 30px; /* 顶部额外的间距 */
+  margin-top: 30px; /* 顶部额外的间距 */ 
 }
 
 /* 博客内容 */
@@ -227,8 +233,10 @@ body {
   background-color: #fff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   border-radius: 8px 0 0 8px; /* 只保留左侧圆角 */
-  margin: 0; /* 移除左右边距 */
-  margin-left: 1rem; /* 只保留左侧边距 */
+  margin: 0; 
+  margin-left: 1rem;
+  margin-bottom: 3rem;
+  height: calc(100vh - 60px); /* 减去顶部padding的高度 */
 }
 
 /* 邮箱复制提示 */
@@ -254,7 +262,10 @@ body {
 
 .friend-card {
   width: 900px;
+  height: 100%;
   padding: 25px;
+  margin: auto;
+  flex: 1;
 }
 
 /* Projects Cards */
@@ -352,6 +363,22 @@ body {
   .layout {
     display: block;
     padding-top: 60px;
+    overflow: visible;
+  }
+
+  .sidebar {
+    position: fixed;
+    height: 100vh;
+    z-index: 40;
+  }
+
+  .main-content {
+    margin: 0 !important;
+    width: 100% !important;
+    padding: 1rem !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding-left: 0;
   }
 
   .mobile-float-button {
@@ -388,21 +415,6 @@ body {
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
   }
 
-  /* 调整主内容区域 */
-  .main-content {
-    margin: 0 !important;
-    width: 100% !important;
-    padding: 1rem !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-  }
-
-  /* 调整语言切换器位置 */
-  .language-switcher-container {
-    top: 1rem;
-    right: 1rem;
-  }
-
   /* 调整内容容器 */
   .container {
     width: 100% !important;
@@ -426,6 +438,11 @@ body {
   .card {
     width: 100% !important;
     margin: 0 0 1rem 0 !important;
+  }
+
+  .friend-card {
+    width: 100%;
+    margin: 0;
   }
 }
 
@@ -462,13 +479,14 @@ body {
   bottom: 0;
   background: rgba(0, 0, 0, 0.5);
   z-index: 998;
+  touch-action: none; /* 防止iOS上的滚动穿透 */
 }
 
 .sidebar-overlay.show {
   display: block;
 }
 
-/* 只添加新的滚动容器样式 */
+/* 确保主内容区域占满高度 */
 .main-content-scroll {
   height: 100vh;
   overflow-y: auto;
@@ -486,4 +504,14 @@ body {
     height: auto;
     overflow: visible;
   }
+}
+
+/* 确保侧边栏在遮罩层之上 */
+.sidebar-container.mobile-open {
+  z-index: 999;
+}
+
+/* 移动端菜单按钮也需要在遮罩层之上 */
+.mobile-float-button {
+  z-index: 1000;
 }
