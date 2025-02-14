@@ -332,6 +332,7 @@ body {
 .mobile-name {
   font-size: 0.9rem;
   font-weight: 500;
+  color: #333;
 }
 
 .mobile-menu-icon {
@@ -430,6 +431,29 @@ body {
   }
 }
 
+/* 确保滚动条在移动端正常工作 */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  html, body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .sidebar-overlay {
+    display: block;
+  }
+}
+
+
+/* 侧边栏样式 */
+.sidebar-container {
+  z-index: 999;
+}
+
 /* 遮罩层样式 */
 .sidebar-overlay {
   display: none;
@@ -444,28 +468,4 @@ body {
 
 .sidebar-overlay.show {
   display: block;
-}
-
-/* 确保滚动条在移动端正常工作 */
-@media (max-width: 768px) {
-  body {
-    overflow-x: hidden;
-  }
-
-  html, body {
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
-}
-
-@media (max-width: 768px) {
-  .sidebar-overlay {
-    display: block;
-  }
-}
-
-/* 侧边栏样式 */
-.sidebar-container {
-  z-index: 999;
 }
