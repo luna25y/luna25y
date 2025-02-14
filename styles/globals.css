@@ -4,6 +4,7 @@ body {
   font-family: 'Segoe UI', Roboto, -apple-system, BlinkMacSystemFont, Oxygen,
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   background-color: #f8f9fa;
+  overflow: hidden;
 }
 
 /* 链接样式与图标样式 */
@@ -75,6 +76,11 @@ body {
 /* 导航菜单 */
 .sidebar {
   height:100vh;
+  flex: 0 0 220px; /* 固定宽度 */
+  background-color: #f8f9fa;
+  padding: 1rem;
+  height: 100%;
+  overflow-y: auto;
 }
 
 .sidebar-nav .nav-link {
@@ -212,14 +218,6 @@ body {
   overflow: hidden;
   padding-top: 60px; /* 为语言切换器留出空间 */
   background-color: #f8f9fa;
-}
-
-.sidebar {
-  flex: 0 0 220px; /* 固定宽度 */
-  background-color: #f8f9fa;
-  padding: 1rem;
-  height: 100%;
-  overflow-y: auto;
 }
 
 .main-content {
@@ -434,7 +432,7 @@ body {
 /* 确保滚动条在移动端正常工作 */
 @media (max-width: 768px) {
   body {
-    overflow-x: hidden;
+    overflow: auto;  /* 移动端恢复滚动 */
   }
 
   html, body {
@@ -468,4 +466,24 @@ body {
 
 .sidebar-overlay.show {
   display: block;
+}
+
+/* 只添加新的滚动容器样式 */
+.main-content-scroll {
+  height: 100vh;
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* 确保布局容器是 flex */
+.layout {
+  display: flex;
+}
+
+/* 移动端保持原样 */
+@media (max-width: 768px) {
+  .main-content-scroll {
+    height: auto;
+    overflow: visible;
+  }
 }

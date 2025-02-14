@@ -15,8 +15,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <Sidebar />
       </aside>
       {/* 右侧内容区域 */}
-      <main className="main-content">
-        {children}
+      <main className="main-content-scroll">
+        <div className="main-content">
+          {children}
+        </div>
       </main>
     </div>
   );
