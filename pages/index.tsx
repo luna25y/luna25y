@@ -1,4 +1,4 @@
-import React, { useState }  from 'react';
+import React, { useState, useEffect }  from 'react';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import type { GetStaticProps } from 'next';
@@ -51,6 +51,25 @@ const About: React.FC = () => {
 
   // 添加默认显示标签数量的常量
   const DEFAULT_VISIBLE_TAGS = 4;
+
+  // 添加一个检查是否为移动端的状态
+  const [isMobile, setIsMobile] = useState(false);
+
+  // 添加检测屏幕宽度的效果
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    // 初始检查
+    checkMobile();
+    
+    // 监听窗口大小变化
+    window.addEventListener('resize', checkMobile);
+    
+    // 清理监听器
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const changeLanguage = (lng: string) => {
     const { pathname, asPath, query } = router;
@@ -260,13 +279,13 @@ const About: React.FC = () => {
                     {entry.skills && entry.skills.length > 0 && (
                       <div className={styles.skillsContainer}>
                         {entry.skills
-                          .slice(0, expandedSkills[`${index}`] ? undefined : DEFAULT_VISIBLE_TAGS)
+                          .slice(0, isMobile && !expandedSkills[`${index}`] ? DEFAULT_VISIBLE_TAGS : undefined)
                           .map((skill, idx) => (
                             <span key={idx} className={styles.skillTag}>
                               {skill}
                             </span>
                         ))}
-                        {entry.skills.length > DEFAULT_VISIBLE_TAGS && (
+                        {isMobile && entry.skills.length > DEFAULT_VISIBLE_TAGS && (
                           <button 
                             className={styles.expandSkillsButton}
                             onClick={() => toggleSkills(index)}
@@ -306,13 +325,13 @@ const About: React.FC = () => {
                             {subEntry.skills && subEntry.skills.length > 0 && (
                               <div className={styles.skillsContainer}>
                                 {subEntry.skills
-                                  .slice(0, expandedSkills[`${index}-${subIndex}`] ? undefined : DEFAULT_VISIBLE_TAGS)
+                                  .slice(0, isMobile && !expandedSkills[`${index}-${subIndex}`] ? DEFAULT_VISIBLE_TAGS : undefined)
                                   .map((skill, sidx) => (
                                     <span key={sidx} className={styles.skillTag}>
                                       {skill}
                                     </span>
                                   ))}
-                                {subEntry.skills.length > DEFAULT_VISIBLE_TAGS && (
+                                {isMobile && subEntry.skills.length > DEFAULT_VISIBLE_TAGS && (
                                   <button 
                                     className={styles.expandSkillsButton}
                                     onClick={() => toggleSkills(index, subIndex)}
