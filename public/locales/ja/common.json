@@ -31,32 +31,21 @@
         "heading": "経験とスキル",
         "entries": [
           {
-            "period": "Jan 2025 - ",
-            "duration": "",
-            "type": "Indie Development",
-            "position": "",
+            "period": "Jan 2025 - Feb 2025",
+            "duration": "1 month",
+            "type": "Work",
+            "position": "E-commerce Assistant",
             "location": "",
             "description": [
-              "独立開発"
+              "Shopifyストアを立ち上げて運営し、商品ページの作成、決済および配送設定を行い、閲覧から購入までのスムーズな顧客体験を実現しました。",
+              "Photoshopなどのツールを使用して商品画像やプロモーション動画を編集・公開し、ブランドの視覚的な訴求力を向上させました。"
             ],
-            "subEntries": [
-              {
-                "period": "",
-                "duration": "1 week",
-                "subTitle": "個人ウェブサイト開発",
-                "description": [
-                  "この個人ウェブサイトを構築し、自身の経験、プロジェクト、およびブログを紹介しています。"
-                ],
-                "skills": [
-                  "TypeScript",
-                  "Express.js",
-                  "Node.js",
-                  "Next.js",
-                  "React",
-                  "HTML/CSS",
-                  "Bootstrap"
-                ]
-              }
+            "skills": [
+              "Shopify",
+              "JavaScript",
+              "HTML/CSS",
+              "Google Analytics",
+              "PhotoShop"
             ]
           },
           {
