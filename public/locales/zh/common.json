@@ -31,21 +31,25 @@
       "heading": "Experience & Skills",
       "entries": [
         {
-          "period": "Jan 2025 - Feb 2025",
-          "duration": "1 month",
+          "period": "Jan 2025 - Now",
+          "duration": "4 month",
           "type": "Work",
-          "position": "E-commerce Assistant",
-          "location": "",
+          "position": "Project Management",
+          "institution": "OceanInk LLC",
+          "location": "Toronto, Ontario, Canada",
           "description": [
-            "- 创建并运营 Shopify 商店，包括设置产品页面、配置支付与配送选项，并确保从浏览到结账的客户购物流程顺畅无阻。",
-            "- 使用 Photoshop 等工具编辑并发布产品图片与宣传视频，提升品牌展示效果。"
+            "- 在 Oceanink 担任 iOS 应用项目的协调工作，负责管理项目进度、促进团队沟通并跟进交付成果。",
+            "- 与开发、设计和市场团队紧密合作，确保项目各阶段顺利推进。",
+            "- 参与 UI/UX 设计讨论，从用户角度提供反馈，协助设计方案与项目目标保持一致。",
+            "- 协助策划推广活动，支持市场工作，以提升应用的可见度和用户参与度。",
+            "- 负责整理项目文档，监控整体进度，并主动解决团队间的沟通问题。"
           ],
           "skills": [
-            "Shopify",
-            "JavaScript",
-            "HTML/CSS",
-            "Google Analytics",
-            "PhotoShop"
+            "Project Management",
+            "PhotoShop",
+            "Figma",
+            "UI/UX",
+            "Cross-functional Team Coordination"
           ]
         },
         {

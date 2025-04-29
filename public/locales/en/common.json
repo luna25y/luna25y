@@ -32,21 +32,25 @@
       "heading": "Experience & Skills",
       "entries": [
         {
-          "period": "Jan 2025 - Feb 2025",
-          "duration": "1 month",
+          "period": "Jan 2025 - Now",
+          "duration": "4 month",
           "type": "Work",
-          "position": "E-commerce Assistant",
-          "location": "",
+          "position": "Project Management",
+          "institution": "OceanInk LLC",
+          "location": "Toronto, Ontario, Canada",
           "description": [
-            "Created and operated a Shopify store, including setting up product pages, configuring payment and shipping settings, and ensuring a smooth customer journey from browsing to checkout.",
-            "Edited and published product images and promotional videos using tools like Photoshop, enhancing brand presentation."
+            "- Served as the project coordination for an iOS application at Oceanink, managing schedules, facilitating team communication, and tracking deliverables.",
+            "- Collaborated closely with development, design, and marketing teams to ensure the smooth execution of project milestones.",
+            "- Contributed to UI/UX design discussions by providing user-centered feedback and assisting in aligning design with project goals.",
+            "- Supported marketing efforts by coordinating promotional activities aimed at increasing app visibility and user engagement.",
+            "- Maintained project documentation, monitored progress, and proactively addressed any communication gaps across teams."
           ],
           "skills": [
-            "Shopify",
-            "JavaScript",
-            "HTML/CSS",
-            "Google Analytics",
-            "PhotoShop"
+            "Project Management",
+            "PhotoShop",
+            "Figma",
+            "UI/UX",
+            "Cross-functional Team Coordination"
           ]
         },
         {

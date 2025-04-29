@@ -31,21 +31,25 @@
         "heading": "経験とスキル",
         "entries": [
           {
-            "period": "Jan 2025 - Feb 2025",
-            "duration": "1 month",
+            "period": "Jan 2025 - Now",
+            "duration": "4 month",
             "type": "Work",
-            "position": "E-commerce Assistant",
-            "location": "",
+            "position": "Project Management",
+            "institution": "OceanInk LLC",
+            "location": "Toronto, Ontario, Canada",
             "description": [
-              "- Shopifyストアを立ち上げて運営し、商品ページの作成、決済および配送設定を行い、閲覧から購入までのスムーズな顧客体験を実現しました。",
-              "- Photoshopなどのツールを使用して商品画像やプロモーション動画を編集・公開し、ブランドの視覚的な訴求力を向上させました。"
+              "- OceaninkにてiOSアプリ開発プロジェクトのコーディネーションを担当し、スケジュール管理、チーム間のコミュニケーション促進、納品物の進捗管理を行いました。",
+              "- 開発・デザイン・マーケティング各チームと密に連携し、プロジェクトの円滑な進行をサポートしました。",
+              "- UI/UX設計に関するディスカッションに参加し、ユーザー視点からのフィードバックを提供し、設計方針の調整を支援しました。",
+              "- アプリの認知度とユーザーエンゲージメント向上を目的としたプロモーション活動を調整し、マーケティング施策を支援しました。",
+              "- プロジェクト関連のドキュメントを管理し、進捗をモニタリングするとともに、チーム間のコミュニケーションギャップの解消に努めました。"
             ],
             "skills": [
-              "Shopify",
-              "JavaScript",
-              "HTML/CSS",
-              "Google Analytics",
-              "PhotoShop"
+              "Project Management",
+              "PhotoShop",
+              "Figma",
+              "UI/UX",
+              "Cross-functional Team Coordination"
             ]
           },
           {
